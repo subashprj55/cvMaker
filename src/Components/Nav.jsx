@@ -23,18 +23,12 @@ const Nav = () => {
   }, []);
   return (
     <>
-      <nav className="w-full bg-[#06536f] h-20 text-[#DDE8F0] ">
-        <div className="flex justify-between items-center px-6 py-5">
+      <nav className="w-full bg-[#06536f] text-[#DDE8F0] ">
+        <div className="flex justify-between items-center px-[5%;] py-2">
           <h2 className="text-3xl">
             <Link to="/">Smart CV</Link>
           </h2>
           <ul className="w-auto flex justify-between gap-10 cursor-pointer text-xl">
-            <li className="px-2">
-              <Link to="/template">Resume Templates</Link>
-            </li>
-            <li className="px-2">
-              <Link to="/aboutus">About Us</Link>
-            </li>
             {userData ? (
               <>
                 <li onClick={handelLogOut} className="px-2">
