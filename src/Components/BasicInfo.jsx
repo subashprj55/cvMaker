@@ -18,7 +18,7 @@ const BasicInfo = ({ setActiveBtn, scrollTop }) => {
   }, [scrollTop]);
 
   return (
-    <div className="bg-gray-200 p-5 w-full">
+    <div className="bg-gray-100 p-5 w-full">
       <h1 className="text-4xl text-blue-600 font-bold mb-10 capitalize">
         Basic Information
       </h1>

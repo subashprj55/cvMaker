@@ -17,7 +17,7 @@ const Educations = ({ setActiveBtn, scrollTop }) => {
   }, [scrollTop]);
 
   return (
-    <div className="w-full bg-gray-200 p-5">
+    <div className="w-full bg-gray-100 p-5">
       <h1 className="text-4xl text-blue-600 font-bold mb-10 capitalize">
         education
       </h1>

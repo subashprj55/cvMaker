@@ -24,7 +24,7 @@ const Languages = ({ scrollTop }) => {
     scrollTop();
   }, [scrollTop]);
   return (
-    <div className="w-full bg-gray-200 p-5">
+    <div className="w-full bg-gray-100 p-5">
       <h1 className="text-4xl font-bold text-blue-600 mb-10 capitalize">
         language
       </h1>

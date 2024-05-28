@@ -23,7 +23,7 @@ const Nav = () => {
   }, []);
   return (
     <>
-      <nav className="w-full bg-[#06536f] text-[#DDE8F0] ">
+      <nav className="w-full bg-gray-600 text-[#DDE8F0] ">
         <div className="flex justify-between items-center px-[5%;] py-2">
           <h2 className="text-3xl">
             <Link to="/">Smart CV</Link>
