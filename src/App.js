@@ -3,7 +3,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Paper from "./Components/Template/Paper";
 import ResumeForm from "./Components/ResumeForm";
 import Faq from "./Components/Faq";
 import PFD from "./Components/PFD";
