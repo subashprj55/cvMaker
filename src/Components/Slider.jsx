@@ -25,12 +25,7 @@ function Slider() {
   }, []);
 
   const handelButton = (id) => {
-    localStorage.setItem("slideCount", id);
-    if (isLogin) {
-      navigate(`/resume/${isLogin}`);
-      return;
-    }
-    navigate("/login");
+      navigate(`/resume`);
   };
 
   return (
