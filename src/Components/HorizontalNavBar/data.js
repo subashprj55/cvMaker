@@ -23,12 +23,12 @@ export const SideBarData = [
     icon: BsBagCheck,
     link: '/experience',
   },
-  // {
-  //   id: 3,
-  //   name: 'project',
-  //   icon: AiOutlineProject,
-  //   link: '/basicInfo',
-  // },
+  {
+    id: 3,
+    name: 'project',
+    icon: AiOutlineProject,
+    link: '/project',
+  },
   // {
   //   id: 4,
   //   name: 'skills',
