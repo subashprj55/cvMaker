@@ -30,7 +30,7 @@ const Skills = () => {
             <span className="text-3xl">+</span>add skill
           </p>
         </div>
-        <CvButton name={'Continue to Language'} link={'/language'} />
+        <CvButton name={'Continue to Language'} link={'/languages'} />
       </div>
     </NavContainer>
   )
