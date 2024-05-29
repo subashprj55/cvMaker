@@ -3,11 +3,7 @@ import Education from '../Components/Education'
 import { getEducation } from '../reducers/educationSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import {
-  createEducationDB,
-  getData,
-  updateEducation,
-} from '../Components/fetchData'
+import { createEducationDB, getData, updateEducation } from '../utils/fetchData'
 import { scrollTop } from '../utils/ScrollTop'
 import NavContainer from '../Components/NavContainer'
 import CvButton from '../Components/CvButton'
