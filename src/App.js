@@ -7,6 +7,7 @@ import Faq from './Components/Faq'
 import PFD from './Components/PFD'
 import ForgotPassword from './pages/ForgotPassword'
 import BasicInfo from './pages/BasicInfo'
+import Educations from './pages/Educations'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="basicInfo" element={<BasicInfo />} />
+          <Route path="education" element={<Educations />} />
           <Route path="signUp" element={<Signup />} />
           <Route path="login" element={<Login />} />
           <Route path="faq" element={<Faq />} />

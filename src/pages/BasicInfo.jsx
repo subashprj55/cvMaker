@@ -5,6 +5,7 @@ import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css'
 import { scrollTop } from '../utils/ScrollTop'
 import NavContainer from '../Components/NavContainer'
+import CvButton from '../Components/CvButton'
 
 const BasicInfo = () => {
   const data = useSelector((event) => event.basicInfo)
@@ -124,10 +125,7 @@ const BasicInfo = () => {
               <ReactQuill value={data.summary} onChange={handelChange} />
             </div>
           </div>
-
-          <button className="capitalize text-lg rounded-lg py-2 px-6 bg-blue-600 text-white hover:bg-blue-700 mt-10">
-            Continue to Education
-          </button>
+          <CvButton name={'Continue to Education'} link={'/education'} />
         </div>
       </NavContainer>
     </>

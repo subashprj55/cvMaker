@@ -19,7 +19,7 @@ export const SideBarData = [
   },
   // {
   //   id: 2,
-  //   name: 'ecperience',
+  //   name: 'experience',
   //   icon: BsBagCheck,
   //   link: '/basicInfo',
   // },
