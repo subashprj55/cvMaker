@@ -29,12 +29,12 @@ export const SideBarData = [
     icon: AiOutlineProject,
     link: '/project',
   },
-  // {
-  //   id: 4,
-  //   name: 'skills',
-  //   icon: HiOutlineLightBulb,
-  //   link: '/basicInfo',
-  // },
+  {
+    id: 4,
+    name: 'skills',
+    icon: HiOutlineLightBulb,
+    link: '/skills',
+  },
   // {
   //   id: 5,
   //   name: 'language',
