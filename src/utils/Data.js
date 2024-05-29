@@ -1,7 +1,3 @@
-import shiva from "../img/shiva.jpg";
-import subash from "../img/subash.jpg";
-import arjun from "../img/arjun.jpg";
-import sanisha from "../img/sanisha.jpg";
 import template1 from "../img/template1.jpg";
 
 //Data used when the user hits "Example" btn
@@ -55,33 +51,6 @@ export const data = {
   ],
 };
 
-export const teams = [
-  {
-    id: 1,
-    name: "Shiva KC",
-    img: shiva,
-    jobTitle: "Full Stack Developer",
-  },
-  {
-    id: 2,
-    name: "Subash Parajuli",
-    img: subash,
-    jobTitle: "Full Stack Developer",
-  },
-  {
-    id: 3,
-    name: "Sanisha Maharjan",
-    img: sanisha,
-    jobTitle: "UI Designer",
-  },
-  {
-    id: 4,
-    name: "Arjun Rai",
-    img: arjun,
-    jobTitle: "Backend Developer",
-  },
-];
-
 export const templates = [
   {
     id: 1,
@@ -98,14 +67,4 @@ export const templates = [
     name: "Template 3",
     img: template1,
   },
-  // {
-  //   id: 4,
-  //   name: 'Template 4',
-  //   img: template1,
-  // },
-  // {
-  //   id: 5,
-  //   name: 'Template 5',
-  //   img: template1,
-  // },
 ];

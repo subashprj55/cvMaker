@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { getUserInfo } from "./fetchData";
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { getUserInfo } from './fetchData'
 
 const Nav = () => {
-  const [userData, setUserData] = useState("");
+  const [userData, setUserData] = useState('')
 
   const fetchData = async (id) => {
-    const userInfo = await getUserInfo(id);
-    setUserData(userInfo);
-  };
+    const userInfo = await getUserInfo(id)
+    setUserData(userInfo)
+  }
 
   const handelLogOut = () => {
-    localStorage.removeItem("userId");
-    window.location.reload();
-  };
+    localStorage.removeItem('userId')
+    window.location.reload()
+  }
 
   useEffect(() => {
-    const id = JSON.parse(localStorage.getItem("userId"));
+    const id = JSON.parse(localStorage.getItem('userId'))
     if (id) {
-      fetchData(id);
+      fetchData(id)
     }
-  }, []);
+  }, [])
   return (
     <>
       <nav className="w-full bg-gray-600 text-[#DDE8F0] ">
@@ -50,7 +50,7 @@ const Nav = () => {
         </div>
       </nav>
     </>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav
