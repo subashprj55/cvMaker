@@ -35,10 +35,10 @@ export const SideBarData = [
     icon: HiOutlineLightBulb,
     link: '/skills',
   },
-  // {
-  //   id: 5,
-  //   name: 'language',
-  //   icon: MdOutlineLanguage,
-  //   link: '/basicInfo',
-  // },
+  {
+    id: 5,
+    name: 'language',
+    icon: MdOutlineLanguage,
+    link: '/languages',
+  },
 ]
