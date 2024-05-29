@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Project from "./Project";
-import Img from "../img/project.png";
 import { addProject } from "../reducers/PSLSlice";
 import { useDispatch } from "react-redux";
 const Projects = ({ setActiveBtn, scrollTop }) => {
@@ -15,7 +14,6 @@ const Projects = ({ setActiveBtn, scrollTop }) => {
         your projects
       </h1>
       <div className="pb-10 border-b-2 border-gray-400">
-        {/* <img src={Img} alt="" className="absolute right-10 top-36 w-[30%]" /> */}
         <Project />
       </div>
       <div

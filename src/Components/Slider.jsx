@@ -1,32 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { templates } from "../utils/Data";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react'
+import { templates } from '../utils/Data'
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Slider() {
-  const navigate = useNavigate();
-  const [isLogin, setIsLogin] = useState("");
+  const navigate = useNavigate()
+  const [isLogin, setIsLogin] = useState('')
 
   const slideLeft = () => {
-    var slider = document.getElementById("slider");
-    slider.scrollLeft = slider.scrollLeft - 400;
-  };
+    var slider = document.getElementById('slider')
+    slider.scrollLeft = slider.scrollLeft - 400
+  }
 
   const slideRight = () => {
-    var slider = document.getElementById("slider");
-    slider.scrollLeft = slider.scrollLeft + 400;
-  };
+    var slider = document.getElementById('slider')
+    slider.scrollLeft = slider.scrollLeft + 400
+  }
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("userId"));
+    const data = JSON.parse(localStorage.getItem('userId'))
     if (data) {
-      setIsLogin(data);
+      setIsLogin(data)
     }
-  }, []);
-
-  const handelButton = (id) => {
-      navigate(`/resume`);
-  };
+  }, [])
 
   return (
     <>
@@ -48,14 +44,11 @@ function Slider() {
                 src={item.img}
                 alt="/"
               />
-              <button
-                onClick={() => {
-                  handelButton(item.id);
-                }}
-                className="p-3 rounded-lg bg-yellow-300 text-xl absolute bottom-5 group-hover:block hidden left-1/3"
-              >
-                Use Template
-              </button>
+              <Link to={'/basicInfo'}>
+                <button className="p-3 rounded-lg bg-yellow-300 text-xl absolute bottom-5 group-hover:block hidden left-1/3">
+                  Use Template
+                </button>
+              </Link>
             </div>
           ))}
         </div>
@@ -66,7 +59,7 @@ function Slider() {
         />
       </div>
     </>
-  );
+  )
 }
 
-export default Slider;
+export default Slider
