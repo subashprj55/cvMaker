@@ -9,6 +9,7 @@ import ForgotPassword from './pages/ForgotPassword'
 import BasicInfo from './pages/BasicInfo'
 import Educations from './pages/Educations'
 import Experiences from './pages/Experiences'
+import Projects from './pages/Projects'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="basicInfo" element={<BasicInfo />} />
           <Route path="education" element={<Educations />} />
           <Route path="experience" element={<Experiences />} />
+          <Route path="project" element={<Projects />} />
           <Route path="signUp" element={<Signup />} />
           <Route path="login" element={<Login />} />
           <Route path="faq" element={<Faq />} />
