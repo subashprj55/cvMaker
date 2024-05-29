@@ -1,94 +1,94 @@
-import React, { useEffect, useState } from "react";
-import { TbTriangleSquareCircle } from "react-icons/tb";
-import { BsFillTriangleFill } from "react-icons/bs";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { createDatabase } from "../Components/fetchData";
-import Alert from "../Components/Alert";
+import React, { useEffect, useState } from 'react'
+import { TbTriangleSquareCircle } from 'react-icons/tb'
+import { BsFillTriangleFill } from 'react-icons/bs'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { createDatabase } from '../utils/fetchData'
+import Alert from '../Components/Alert'
 
 const Signup = () => {
-  const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [conPassword, setConPassword] = useState("");
-  const [validUserName, setValiduserName] = useState(true);
-  const [validLastName, setValidLastName] = useState(true);
-  const [validEmail, setValidEmail] = useState(true);
-  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate()
+  const [showPassword, setShowPassword] = useState(false)
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [conPassword, setConPassword] = useState('')
+  const [validUserName, setValiduserName] = useState(true)
+  const [validLastName, setValidLastName] = useState(true)
+  const [validEmail, setValidEmail] = useState(true)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handelSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    if (!validUserName) return setErrorMessage("Enter valid User Name");
-    if (!validLastName) return setErrorMessage("Enter valid Last Name");
-    if (!validEmail) return setErrorMessage("Enter valid Email");
+    if (!validUserName) return setErrorMessage('Enter valid User Name')
+    if (!validLastName) return setErrorMessage('Enter valid Last Name')
+    if (!validEmail) return setErrorMessage('Enter valid Email')
     if (password !== conPassword)
-      return setErrorMessage("Password are not the same");
-    let id;
+      return setErrorMessage('Password are not the same')
+    let id
     try {
       const response = await axios({
-        method: "post",
-        url: "api/users/register",
+        method: 'post',
+        url: 'api/users/register',
         data: {
           username: firstName,
           lastname: lastName,
           email,
           password,
         },
-      });
-      id = response.data.data._id;
+      })
+      id = response.data.data._id
     } catch (err) {
-      console.log("something is wrong", err);
+      console.log('something is wrong', err)
     }
-    createDatabase(id);
-    setErrorMessage("account created sucessfully");
+    createDatabase(id)
+    setErrorMessage('account created sucessfully')
     setTimeout(() => {
-      navigate("/login");
-    }, 2000);
-  };
+      navigate('/login')
+    }, 2000)
+  }
 
   const checkString = (str) => {
-    return /^[a-zA-Z]+$/.test(str);
-  };
+    return /^[a-zA-Z]+$/.test(str)
+  }
   const chackEmail = (str) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
-  };
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str)
+  }
   useEffect(() => {
     if (firstName.length > 0) {
-      const data = checkString(firstName);
+      const data = checkString(firstName)
       if (data) {
-        setValiduserName(true);
-        return;
+        setValiduserName(true)
+        return
       }
-      setValiduserName(false);
+      setValiduserName(false)
     }
-  }, [firstName]);
+  }, [firstName])
 
   useEffect(() => {
     if (lastName.length > 0) {
-      const data = checkString(lastName);
+      const data = checkString(lastName)
       if (data) {
-        setValidLastName(true);
-        return;
+        setValidLastName(true)
+        return
       }
-      setValidLastName(false);
+      setValidLastName(false)
     }
-  }, [lastName]);
+  }, [lastName])
 
   useEffect(() => {
     if (email.length > 0) {
-      const data = chackEmail(email);
+      const data = chackEmail(email)
       if (data) {
-        setValidEmail(true);
-        return;
+        setValidEmail(true)
+        return
       }
-      setValidEmail(false);
+      setValidEmail(false)
     }
-  }, [email]);
+  }, [email])
   return (
     <>
       {errorMessage && (
@@ -114,13 +114,13 @@ const Signup = () => {
               <input
                 value={firstName}
                 onChange={(e) => {
-                  setFirstName(e.target.value);
+                  setFirstName(e.target.value)
                 }}
                 required
                 className={` w-full rounded-lg px-2 py-2 outline-none ${
                   validUserName
-                    ? "border-2 border-white"
-                    : "border-2 border-red-600"
+                    ? 'border-2 border-white'
+                    : 'border-2 border-red-600'
                 }  font-medium tracking-wide text-lg bg-gray-200`}
                 type="text"
               />
@@ -136,8 +136,8 @@ const Signup = () => {
                 type="text"
                 className={` w-full rounded-lg px-2 py-2 outline-none ${
                   validLastName
-                    ? "border-2 border-white"
-                    : "border-2 border-red-600"
+                    ? 'border-2 border-white'
+                    : 'border-2 border-red-600'
                 }  font-medium tracking-wide text-lg bg-gray-200`}
               />
             </div>
@@ -152,8 +152,8 @@ const Signup = () => {
                 type="email"
                 className={` w-full rounded-lg px-2 py-2 outline-none ${
                   validEmail
-                    ? "border-2 border-white"
-                    : "border-2 border-red-600"
+                    ? 'border-2 border-white'
+                    : 'border-2 border-red-600'
                 }  font-medium tracking-wide text-lg bg-gray-200`}
               />
             </div>
@@ -165,7 +165,7 @@ const Signup = () => {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 className=" w-full rounded-lg px-2 py-2 font-medium tracking-wide text-lg bg-gray-200 outline-none"
               />
               {showPassword ? (
@@ -188,7 +188,7 @@ const Signup = () => {
                 required
                 value={conPassword}
                 onChange={(e) => setConPassword(e.target.value)}
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 className="outline-none w-full rounded-lg px-2 py-2 font-medium tracking-wide text-base md:text-lg bg-gray-200"
               />
             </div>
@@ -203,7 +203,7 @@ const Signup = () => {
         <BsFillTriangleFill className="z-10 absolute top-0 -right-40 w-[600px] h-[600px] bg-slate-200 opacity-5 rotate-45" />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup

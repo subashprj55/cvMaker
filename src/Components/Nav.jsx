@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getUserInfo } from './fetchData'
+import { getUserInfo } from '../utils/fetchData'
 
 const Nav = () => {
   const [userData, setUserData] = useState('')

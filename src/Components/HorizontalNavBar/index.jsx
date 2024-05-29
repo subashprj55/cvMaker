@@ -14,7 +14,7 @@ const NavBar = () => {
                 pathName === link
                   ? 'bg-blue-500 text-white'
                   : 'md:hover:bg-gray-200'
-              } cursor-pointer  mb-2 p-3 rounded-lg duration-300`}
+              } capitalize cursor-pointer  mb-2 p-3 rounded-lg duration-300`}
             >
               <Icon className="text-2xl mx-auto" />
               <h1 className="text-center capitalize">{name}</h1>

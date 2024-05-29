@@ -1,37 +1,37 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Alert from "../Components/Alert";
-import { changePassword, sendPin } from "../Components/fetchData";
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import Alert from '../Components/Alert'
+import { changePassword, sendPin } from '../utils/fetchData'
 
 const ForgotPassword = () => {
-  const [email, setEmail] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [pin, setPin] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [email, setEmail] = useState('')
+  const [newPassword, setNewPassword] = useState('')
+  const [pin, setPin] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
   const handelForgotPinButton = async () => {
-    const response = await sendPin(email);
-    if (response === "success") {
-      setShowPassword(true);
+    const response = await sendPin(email)
+    if (response === 'success') {
+      setShowPassword(true)
     } else {
-      setErrorMessage("Envalid Email! please try valid Email");
+      setErrorMessage('Envalid Email! please try valid Email')
     }
-  };
+  }
 
   const handelChangePassword = async () => {
-    const response = await changePassword(email, pin, newPassword);
-    if (response.status === "success") {
-      setErrorMessage("Your password has been changed");
+    const response = await changePassword(email, pin, newPassword)
+    if (response.status === 'success') {
+      setErrorMessage('Your password has been changed')
     } else {
-      setErrorMessage(response.message);
+      setErrorMessage(response.message)
     }
     setTimeout(() => {
-      navigate("/login");
-    }, 2000);
-  };
+      navigate('/login')
+    }, 2000)
+  }
 
   return (
     <div className="flex justify-center mt-24">
@@ -48,7 +48,7 @@ const ForgotPassword = () => {
             className="bg-gray-100 w-full rounded-md p-2 pl-3 mb-5"
             type="text"
           />
-          <div className={`${showPassword ? "" : "hidden"} `}>
+          <div className={`${showPassword ? '' : 'hidden'} `}>
             <h1 className="capitalize mb-2">new password</h1>
             <input
               value={newPassword}
@@ -68,7 +68,7 @@ const ForgotPassword = () => {
           <button
             onClick={handelForgotPinButton}
             className={`${
-              showPassword ? "hidden" : ""
+              showPassword ? 'hidden' : ''
             } capitalize text-lg rounded-lg py-2 px-6 bg-yellow-500 text-white hover:bg-yellow-600 mt-10`}
           >
             send forgot pin
@@ -76,7 +76,7 @@ const ForgotPassword = () => {
           <button
             onClick={handelChangePassword}
             className={`${
-              showPassword ? "" : "hidden"
+              showPassword ? '' : 'hidden'
             } capitalize text-lg rounded-lg py-2 px-6 bg-blue-600 text-white hover:bg-blue-700 mt-10`}
           >
             change your password
@@ -84,7 +84,7 @@ const ForgotPassword = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ForgotPassword;
+export default ForgotPassword

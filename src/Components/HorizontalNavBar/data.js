@@ -17,12 +17,12 @@ export const SideBarData = [
     icon: MdCastForEducation,
     link: '/education',
   },
-  // {
-  //   id: 2,
-  //   name: 'experience',
-  //   icon: BsBagCheck,
-  //   link: '/basicInfo',
-  // },
+  {
+    id: 2,
+    name: 'experience',
+    icon: BsBagCheck,
+    link: '/experience',
+  },
   // {
   //   id: 3,
   //   name: 'project',

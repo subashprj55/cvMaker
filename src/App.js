@@ -8,6 +8,7 @@ import PFD from './Components/PFD'
 import ForgotPassword from './pages/ForgotPassword'
 import BasicInfo from './pages/BasicInfo'
 import Educations from './pages/Educations'
+import Experiences from './pages/Experiences'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="basicInfo" element={<BasicInfo />} />
           <Route path="education" element={<Educations />} />
+          <Route path="experience" element={<Experiences />} />
           <Route path="signUp" element={<Signup />} />
           <Route path="login" element={<Login />} />
           <Route path="faq" element={<Faq />} />
