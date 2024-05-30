@@ -1,8 +1,7 @@
 import React from 'react'
 import { MdDelete } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
-import { editExperience, getExperience } from '../reducers/experienceSlice'
-import { deleteData, getData } from '../utils/fetchData'
+import { deleteExperience, editExperience } from '../reducers/experienceSlice'
 
 const Experience = ({ id }) => {
   const data = useSelector((event) => event.experienceData)
@@ -18,11 +17,7 @@ const Experience = ({ id }) => {
           ) : (
             <MdDelete
               className="text-2xl cursor-pointer z-50"
-              onClick={async () => {
-                const dbName = 'experience'
-                await deleteData(item._id, dbName)
-                await getData(dispatch, id, getExperience, dbName)
-              }}
+              onClick={() => dispatch(deleteExperience(i))}
             />
           )}
         </div>
