@@ -1,7 +1,7 @@
-import Faq from "../Components/Faq";
-import Footer from "../Components/Footer";
-import Nav from "../Components/Nav";
-import Slider from "../Components/Slider";
+import Faq from '../Components/Faq'
+import Footer from '../Components/Footer'
+import Nav from '../Components/Nav'
+import Slider from '../Components/Slider'
 
 const Home = () => {
   return (
@@ -20,10 +20,9 @@ const Home = () => {
           <Faq />
         </div>
       </div>
-
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
