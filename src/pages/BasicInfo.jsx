@@ -17,7 +17,7 @@ const BasicInfo = () => {
 
   useEffect(() => {
     scrollTop()
-  }, [scrollTop])
+  }, [])
 
   return (
     <>

@@ -2,18 +2,15 @@ import React, { useEffect } from 'react'
 import Language from '../Components/Language'
 import { useDispatch } from 'react-redux'
 import { addLanguge } from '../reducers/PSLSlice'
-import { useNavigate } from 'react-router-dom'
 import { scrollTop } from '../utils/ScrollTop'
 import NavContainer from '../Components/NavContainer'
 import CvButton from '../Components/CvButton'
 
 const Languages = () => {
-  const navigate = useNavigate()
-
   const dispatch = useDispatch()
   useEffect(() => {
     scrollTop()
-  }, [scrollTop])
+  }, [])
 
   return (
     <NavContainer>
