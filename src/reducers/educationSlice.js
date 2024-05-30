@@ -1,33 +1,29 @@
-import { createSlice } from "@reduxjs/toolkit";
-const initialState = [
-  {
-    courseName: "",
-    institutionName: "",
-    collageAddress: "",
-    startDate: "",
-    endDate: "",
-  },
-];
+import { createSlice } from '@reduxjs/toolkit'
+const Educationdata = {
+  courseName: '',
+  institutionName: '',
+  collageAddress: '',
+  startDate: '',
+  endDate: '',
+}
+const initialState = [Educationdata]
 
 export const educationSlice = createSlice({
-  name: "education",
+  name: 'education',
   initialState,
   reducers: {
-    editEducation: (state, action) => {
-      const { index, text, id } = action.payload;
-      const newObj = state[index];
-      newObj[id] = text;
-      const newArr = state.map((item, i) => {
-        if (i === index) return newObj;
-        else return item;
-      });
-      state = newArr;
+    addEducation: (state) => {
+      state.push(Educationdata)
     },
-    getEducation: (state, action) => {
-      const data = action.payload;
-      return [...data];
+    editEducation: (state, action) => {
+      const { index, text, id } = action.payload
+      state[index][id] = text
+    },
+    deleteEducation: (state, action) => {
+      return state.filter((item, index) => index !== action.payload)
     },
   },
-});
-export const { editEducation, getEducation } = educationSlice.actions;
-export default educationSlice.reducer;
+})
+export const { editEducation, addEducation, deleteEducation } =
+  educationSlice.actions
+export default educationSlice.reducer

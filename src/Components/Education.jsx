@@ -1,12 +1,10 @@
 import React from 'react'
 import { MdDelete } from 'react-icons/md'
 import { useDispatch, useSelector } from 'react-redux'
-import { editEducation, getEducation } from '../reducers/educationSlice'
-import { deleteData, getData } from '../utils/fetchData'
+import { editEducation, deleteEducation } from '../reducers/educationSlice'
 
-const Education = ({ id }) => {
+const Education = () => {
   const data = useSelector((event) => event.educationData)
-
   const dispatch = useDispatch()
 
   return data.map((item, i) => (
@@ -19,11 +17,7 @@ const Education = ({ id }) => {
           ) : (
             <MdDelete
               className="text-2xl cursor-pointer"
-              onClick={async () => {
-                const dbName = 'education'
-                await deleteData(item._id, dbName)
-                await getData(dispatch, id, getEducation, dbName)
-              }}
+              onClick={() => dispatch(deleteEducation(i))}
             />
           )}
         </div>
