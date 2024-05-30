@@ -86,12 +86,6 @@ const Login = () => {
               <h1 className="md:hidden capitalize text-lg font-medium pb-1 underline">
                 sign up
               </h1>
-              <h1
-                onClick={() => navigate('/forgotPassword')}
-                className="hover:underline text-center text-lg font-medium cursor-pointer"
-              >
-                Lost your password?
-              </h1>
             </div>
           </form>
         </div>
