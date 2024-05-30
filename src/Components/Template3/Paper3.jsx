@@ -24,7 +24,7 @@ const Paper3 = () => {
           <div className="mx-36 mb-7 text-center">
             {parse(basicInfoData.summary)}
           </div>
-          <h1 className="bg-sky-300 pl-6 pb-5 font-medium  capitalize text-3xl">
+          <h1 className="bg-sky-300 pl-6 py-1 font-medium  capitalize text-3xl">
             {basicInfoData.firstName}
           </h1>
         </div>
