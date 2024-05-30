@@ -1,10 +1,9 @@
 import { templates } from '../utils/Data'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Slider() {
   const navigator = useNavigate()
-
   const handelClick = (id) => {
     localStorage.setItem('cvTemplate', JSON.stringify(id))
     navigator('/basicInfo')
