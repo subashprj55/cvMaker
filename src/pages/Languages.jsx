@@ -16,7 +16,7 @@ const Languages = () => {
     <NavContainer>
       <div className="w-full bg-gray-100 p-5 min-h-screen">
         <h1 className="text-4xl font-bold text-blue-600 mb-10 capitalize">
-          language
+          languages
         </h1>
         <div className="pb-10 border-b-2 border-gray-400">
           <Language />

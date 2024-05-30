@@ -12,12 +12,12 @@ const Skills = () => {
   useEffect(() => {
     scrollTop()
   }, [])
-  //
+
   return (
     <NavContainer>
       <div className="w-full bg-gray-100 p-5 min-h-screen">
         <h1 className="text-4xl text-blue-600 font-bold mb-10 capitalize">
-          skill
+          skills
         </h1>
         <div className="pb-10 border-b-2 border-gray-400">
           <Skill />
