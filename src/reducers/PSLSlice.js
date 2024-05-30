@@ -93,13 +93,6 @@ const PSRSlice = createSlice({
       })
       state.language = newArr
     },
-    getAllData: (state, action) => {
-      const data = action.payload
-      state.project = data[0].project
-      state.language = data[0].language
-      state.skill = data[0].skill
-      state.id = data[0]._id
-    },
   },
 })
 

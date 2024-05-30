@@ -4,7 +4,7 @@ import Signup from './pages/Signup'
 import Home from './pages/Home'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Faq from './Components/Faq'
-import PFD from './Components/PFD'
+import PreViewPdfFD from './pages/PreViewPdf'
 import BasicInfo from './pages/BasicInfo'
 import Educations from './pages/Educations'
 import Experiences from './pages/Experiences'
@@ -27,7 +27,7 @@ function App() {
           <Route path="signUp" element={<Signup />} />
           <Route path="login" element={<Login />} />
           <Route path="faq" element={<Faq />} />
-          <Route path="preview" element={<PFD />} />
+          <Route path="preview" element={<PreViewPdfFD />} />
         </Routes>
       </BrowserRouter>
     </>
