@@ -11,7 +11,9 @@ const Skill = () => {
   return data.skill.map((item, i) => (
     <div key={i} className="mb-5 ">
       <div className="flex gap-[33%]">
-        <h1 className="text-lg capitalize mb-1">skill </h1>
+        <h1 className="text-lg capitalize font-medium tracking-wide mb-1">
+          skill{' '}
+        </h1>
         {i === 0 ? (
           ''
         ) : (
@@ -29,7 +31,7 @@ const Skill = () => {
             dispatch(editSkill({ index: i, text, id: 'skill' }))
           }}
           type="text"
-          className=" w-8/12 rounded-lg px-2 py-2 font-semibold tracking-wide text-xl"
+          className=" w-8/12 rounded-lg px-2 py-2 tracking-wide text-xl"
         />
         <StarRating
           rating={item.skillRating}
