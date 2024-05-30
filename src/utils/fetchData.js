@@ -1,197 +1,168 @@
-import axios from "axios";
+import axios from 'axios'
 
-const getData = async (dispatch, id, reducerName, dbName) => {
-  try {
-    const response = await axios(`http://127.0.0.1:5000/api/${dbName}/${id}`);
-    const value = response.data.data;
-    dispatch(reducerName(value));
-  } catch (err) {
-    console.log("check your connection");
-  }
-};
+const getData = async (dispatch, reducerName) => {
+  dispatch(reducerName(''))
+}
 
 const createDatabase = async (id) => {
-  createBasicInfoDB(id);
-  createEducationDB(id);
-  createExperienceDB(id);
-  createPSLDatabase(id);
-};
-
-const createBasicInfoDB = async (id) => {
-  try {
-    await axios({
-      method: "post",
-      url: "http://127.0.0.1:5000/api/basicInfo",
-      data: {
-        firstName: "",
-        professionalTitle: "",
-        website: "",
-        address: "",
-        city: "",
-        email: "",
-        phone: "",
-        summary: "",
-        user: id,
-      },
-    });
-  } catch (err) {
-    console.log("basic info database is not created", err);
-  }
-};
+  createEducationDB(id)
+  createExperienceDB(id)
+  createPSLDatabase(id)
+}
 
 const createEducationDB = async (id) => {
   try {
     await axios({
-      method: "post",
-      url: "http://127.0.0.1:5000/api/education",
+      method: 'post',
+      url: 'http://127.0.0.1:5000/api/education',
       data: {
-        courseName: "",
-        institutionName: "",
-        collageAddress: "",
-        startDate: "",
-        endDate: "",
+        courseName: '',
+        institutionName: '',
+        collageAddress: '',
+        startDate: '',
+        endDate: '',
         user: id,
       },
-    });
+    })
   } catch (err) {
-    console.log("education db not created", err);
+    console.log('education db not created', err)
   }
-};
+}
 
 const createExperienceDB = async (id) => {
   try {
     await axios({
-      method: "post",
-      url: "http://127.0.0.1:5000/api/experience",
+      method: 'post',
+      url: 'http://127.0.0.1:5000/api/experience',
       data: {
-        jobTitle: "",
-        companyName: "",
-        location: "",
-        startDate: "",
-        endDate: "",
+        jobTitle: '',
+        companyName: '',
+        location: '',
+        startDate: '',
+        endDate: '',
         user: id,
       },
-    });
+    })
   } catch (err) {
-    console.log("experience db not created", err);
+    console.log('experience db not created', err)
   }
-};
+}
 
 const createPSLDatabase = async (id) => {
   try {
     await axios({
-      method: "post",
-      url: "http://127.0.0.1:5000/api/psl",
+      method: 'post',
+      url: 'http://127.0.0.1:5000/api/psl',
       data: {
         project: [
           {
-            projectName: "",
-            description: "",
-            link: "",
+            projectName: '',
+            description: '',
+            link: '',
           },
         ],
         skill: [
           {
-            skill: "",
+            skill: '',
             skillRating: 0,
           },
         ],
         language: [
           {
-            language: "",
+            language: '',
             languageRating: 0,
           },
         ],
         user: id,
       },
-    });
+    })
   } catch (err) {
-    console.log("project,skill and language db not created", err);
+    console.log('project,skill and language db not created', err)
   }
-};
+}
 
 const updateBasicInfo = async (basicInfoData) => {
   await axios({
-    method: "patch",
+    method: 'patch',
     url: `http://127.0.0.1:5000/api/basicInfo/${basicInfoData.id}`,
     data: basicInfoData,
-  });
-};
+  })
+}
 
 const updateEducation = (educationData) => {
   educationData.forEach(async (item) => {
     try {
       await axios({
-        method: "patch",
+        method: 'patch',
         url: `http://127.0.0.1:5000/api/education/${item._id}`,
         data: item,
-      });
+      })
     } catch (err) {
-      console.log("errr", err);
+      console.log('errr', err)
     }
-  });
-};
+  })
+}
 
 const updateExperience = (experienceData) => {
   experienceData.forEach(async (item) => {
     try {
       await axios({
-        method: "patch",
+        method: 'patch',
         url: `http://127.0.0.1:5000/api/experience/${item._id}`,
         data: item,
-      });
+      })
     } catch (err) {
-      console.log("errr", err);
+      console.log('errr', err)
     }
-  });
-};
+  })
+}
 
 const updatePSL = async (PSLDate) => {
   await axios({
-    method: "patch",
+    method: 'patch',
     url: `http://127.0.0.1:5000/api/psl/${PSLDate.id}`,
     data: PSLDate,
-  });
-};
+  })
+}
 
 const deleteData = async (id, dbName) => {
   await axios({
-    method: "delete",
+    method: 'delete',
     url: `http://127.0.0.1:5000/api/${dbName}/${id}`,
-  });
-};
+  })
+}
 
 const getUserInfo = async (id) => {
   try {
-    const response = await axios(`http://127.0.0.1:5000/api/users/${id}`);
-    return response.data.user;
+    const response = await axios(`http://127.0.0.1:5000/api/users/${id}`)
+    return response.data.user
   } catch (err) {
-    console.log("errror", err);
+    console.log('errror', err)
   }
-};
+}
 
 const sendPin = async (email) => {
   const response = await axios({
-    method: "post",
+    method: 'post',
     url: `http://127.0.0.1:5000/api/users/forgotPassword`,
     data: {
       email,
     },
-  });
-  return response.data.status;
-};
+  })
+  return response.data.status
+}
 const changePassword = async (email, pin, newPassword) => {
   const response = await axios({
-    method: "post",
+    method: 'post',
     url: `http://127.0.0.1:5000/api/users/changePassword`,
     data: {
       email,
       pin,
       newPassword,
     },
-  });
-  return response.data;
-};
+  })
+  return response.data
+}
 
 export {
   getData,
@@ -207,4 +178,4 @@ export {
   getUserInfo,
   sendPin,
   changePassword,
-};
+}
