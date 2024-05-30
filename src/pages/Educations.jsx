@@ -11,7 +11,7 @@ const Educations = () => {
 
   useEffect(() => {
     scrollTop()
-  }, [scrollTop])
+  }, [])
 
   return (
     <>

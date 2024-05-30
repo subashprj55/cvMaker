@@ -11,7 +11,7 @@ const Skills = () => {
 
   useEffect(() => {
     scrollTop()
-  }, [scrollTop])
+  }, [])
   //
   return (
     <NavContainer>

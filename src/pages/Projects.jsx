@@ -10,7 +10,7 @@ const Projects = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     scrollTop()
-  }, [scrollTop])
+  }, [])
   return (
     <NavContainer>
       <div className="w-full bg-gray-100 p-5">

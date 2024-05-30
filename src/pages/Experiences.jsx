@@ -10,7 +10,7 @@ const Experiences = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     scrollTop()
-  }, [scrollTop])
+  }, [])
 
   return (
     <NavContainer>
