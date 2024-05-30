@@ -1,42 +1,20 @@
-import React, { useState } from "react";
-import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
-import { GiMoebiusTriangle } from "react-icons/gi";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
-import Alert from "../Components/Alert";
+import React, { useState } from 'react'
+import { FaGoogle, FaEye, FaEyeSlash } from 'react-icons/fa'
+import { GiMoebiusTriangle } from 'react-icons/gi'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate()
+  const [showPassword, setShowPassword] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const handelSubmmit = async (e) => {
-    e.preventDefault();
-    let id;
-    try {
-      const response = await axios({
-        method: "post",
-        url: "api/users/login",
-        data: {
-          email,
-          password,
-        },
-      });
-      id = response.data.user._id;
-    } catch (err) {
-      return setErrorMessage("Incorrect Email or Password 😔");
-    }
-    localStorage.setItem("userId", JSON.stringify(id));
-    navigate(`/resume/${id}`);
-  };
+    navigate(`/basicInfo`)
+  }
 
   return (
     <>
-      {errorMessage && (
-        <Alert message={errorMessage} setMessage={setErrorMessage} />
-      )}
       <div className="flex h-[50vh]">
         <div className="flex justify-center items-center md:w-[60%] md:h-screen bg-gray-300 lg:py-4 lg:px-10">
           <form
@@ -81,7 +59,7 @@ const Login = () => {
                   <input
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword ? 'text' : 'password'}
                     required
                     className="bg-gray-300 w-full rounded-lg px-2 py-2 text-lg"
                   />
@@ -109,7 +87,7 @@ const Login = () => {
                 sign up
               </h1>
               <h1
-                onClick={() => navigate("/forgotPassword")}
+                onClick={() => navigate('/forgotPassword')}
                 className="hover:underline text-center text-lg font-medium cursor-pointer"
               >
                 Lost your password?
@@ -131,7 +109,7 @@ const Login = () => {
                 and make your CV attractive and professional.
               </p>
               <div className="flex justify-center mt-5">
-                <Link to={"/signUp"}>
+                <Link to={'/signUp'}>
                   <p className="capitalize text-2xl rounded-xl py-3 px-10 bg-pink-600 text-white hover:bg-pink-700">
                     sign up
                   </p>
@@ -144,7 +122,7 @@ const Login = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

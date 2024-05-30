@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { TbTriangleSquareCircle } from 'react-icons/tb'
 import { BsFillTriangleFill } from 'react-icons/bs'
 import { FaEye, FaEyeSlash } from 'react-icons/fa'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { createDatabase } from '../utils/fetchData'
 import Alert from '../Components/Alert'
 
 const Signup = () => {
@@ -28,23 +26,6 @@ const Signup = () => {
     if (!validEmail) return setErrorMessage('Enter valid Email')
     if (password !== conPassword)
       return setErrorMessage('Password are not the same')
-    let id
-    try {
-      const response = await axios({
-        method: 'post',
-        url: 'api/users/register',
-        data: {
-          username: firstName,
-          lastname: lastName,
-          email,
-          password,
-        },
-      })
-      id = response.data.data._id
-    } catch (err) {
-      console.log('something is wrong', err)
-    }
-    createDatabase(id)
     setErrorMessage('account created sucessfully')
     setTimeout(() => {
       navigate('/login')
