@@ -22,7 +22,7 @@ const HomeTitileSection = () => {
   return (
     <CvContainer>
       <div className="pt-10">
-        <h2 className="text-3xl md:text-5xl text-[#38BDF8] uppercase">
+        <h2 className="text-3xl md:text-5xl text-[#38BDF8] uppercase text-center">
           Create your professional Resume Here
         </h2>
       </div>

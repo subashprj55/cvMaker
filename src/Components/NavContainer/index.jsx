@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import CvContainer from '../CvContainer'
 import NavBar from '../HorizontalNavBar'
 import Nav from '../Nav'
 import Paper from '../Template/Paper'
@@ -9,11 +10,13 @@ const NavContainer = ({ children }) => {
   return (
     <>
       <Nav />
-      <div className="flex">
-        <NavBar />
-        {children}
-        <CvTemplatesSection />
-      </div>
+      <CvContainer space={false}>
+        <div className="flex">
+          <NavBar />
+          {children}
+          <CvTemplatesSection />
+        </div>
+      </CvContainer>
     </>
   )
 }
