@@ -29,7 +29,7 @@ const Experiences = () => {
             <span className="text-3xl">+</span>add employment
           </p>
         </div>
-        <CvButton name={'Continue to Project'} link={'project'} />
+        <CvButton name={'Continue to Project'} link={'/project'} />
       </div>
     </NavContainer>
   )

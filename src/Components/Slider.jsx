@@ -20,8 +20,8 @@ function Slider() {
   }
 
   return (
-    <>
-      <h1 className="text-center text-4xl">Templates</h1>
+    <div className="my-20 md:my-12">
+      <h1 className="text-center text-4xl ">Templates</h1>
       <div className="relative flex items-center">
         <MdChevronLeft
           className="opacity-50 cursor-pointer hover:opacity-100"
@@ -35,13 +35,13 @@ function Slider() {
           {templates.map(({ id, img }) => (
             <div key={id} className="inline-block relative mb-7 group">
               <img
-                className={`w-[480px] p-2 mx-7 group-hover:scale-105 ease-in-out duration-300`}
+                className={`w-auto md:w-[480px] md:p-2 md:mx-7 group-hover:scale-105 ease-in-out duration-300`}
                 src={img}
                 alt="/"
               />
               <button
                 onClick={() => handelClick(id)}
-                className="p-3 rounded-lg bg-yellow-300 text-xl absolute bottom-5 group-hover:block hidden left-1/3"
+                className="p-3 rounded-lg bg-yellow-300 text-xl absolute bottom-5 group-hover:block lg:hidden left-1/3"
               >
                 Use Template
               </button>
@@ -54,7 +54,7 @@ function Slider() {
           size={40}
         />
       </div>
-    </>
+    </div>
   )
 }
 
