@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
   const pathName = window.location.pathname
   return (
-    <div className="border-r-2 border-gray-400 py-2 w-auto px-1">
+    <div className="border-r-2 border-gray-400 py-2 w-auto px-1 hidden md:block">
       {SideBarData.map(({ id, name, icon: Icon, link }) => {
         return (
           <Link to={link} key={id}>
